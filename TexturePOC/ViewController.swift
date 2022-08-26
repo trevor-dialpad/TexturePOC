@@ -92,10 +92,10 @@ class TextureViewController: UIViewController {
         tableNode.inverted = true
     }
 
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        textView.becomeFirstResponder()
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        textView.becomeFirstResponder()
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,11 +114,11 @@ class TextureViewController: UIViewController {
 //        tableNode.view.constrain(.bottom, to: .top, of: inputComposer.view)
         tableNode.view.backgroundColor = .blue
         tableNode.view.keyboardDismissMode = .interactive
-        tableNode.view.constrainEdges(to: view)
+        tableNode.view.constrain(.top, .leading, .trailing, to: view)
 
-//        view.keyboardLayoutGuide.followsUndockedKeyboard = true
-//        let textFieldOnKeyboard = view.keyboardLayoutGuide.topAnchor.constraint(equalTo: inputComposer.view.bottomAnchor)
-//        view.keyboardLayoutGuide.setConstraints([textFieldOnKeyboard], activeWhenAwayFrom: .top)
+        view.keyboardLayoutGuide.followsUndockedKeyboard = true
+        let textFieldOnKeyboard = view.keyboardLayoutGuide.topAnchor.constraint(equalTo: tableNode.view.bottomAnchor)
+        view.keyboardLayoutGuide.setConstraints([textFieldOnKeyboard], activeWhenAwayFrom: .top)
    }
 
     override var inputAccessoryView: UIToolbar {
