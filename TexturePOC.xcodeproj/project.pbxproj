@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10391E4D3D5FF98AB6740131 /* Pods_TexturePOC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CE070CB58D2FEA12130867 /* Pods_TexturePOC.framework */; };
 		9EB6FF0528B94925001E1404 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6FF0428B94925001E1404 /* AppDelegate.swift */; };
 		9EB6FF0728B94925001E1404 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6FF0628B94925001E1404 /* SceneDelegate.swift */; };
 		9EB6FF0928B94925001E1404 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EB6FF0828B94925001E1404 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60D9DA4CFBE233073A93F4F6 /* Pods-TexturePOC.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TexturePOC.release.xcconfig"; path = "Target Support Files/Pods-TexturePOC/Pods-TexturePOC.release.xcconfig"; sourceTree = "<group>"; };
+		74CE070CB58D2FEA12130867 /* Pods_TexturePOC.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TexturePOC.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BA3848627AE551BCD076485 /* Pods-TexturePOC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TexturePOC.debug.xcconfig"; path = "Target Support Files/Pods-TexturePOC/Pods-TexturePOC.debug.xcconfig"; sourceTree = "<group>"; };
 		9EB6FF0128B94925001E1404 /* TexturePOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TexturePOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EB6FF0428B94925001E1404 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9EB6FF0628B94925001E1404 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10391E4D3D5FF98AB6740131 /* Pods_TexturePOC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C9E7ED8CAD598CFEB2604B9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8BA3848627AE551BCD076485 /* Pods-TexturePOC.debug.xcconfig */,
+				60D9DA4CFBE233073A93F4F6 /* Pods-TexturePOC.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		97135C912130240CD5B8256E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74CE070CB58D2FEA12130867 /* Pods_TexturePOC.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9EB6FEF828B94925001E1404 = {
 			isa = PBXGroup;
 			children = (
 				9EB6FF0328B94925001E1404 /* TexturePOC */,
 				9EB6FF0228B94925001E1404 /* Products */,
+				6C9E7ED8CAD598CFEB2604B9 /* Pods */,
+				97135C912130240CD5B8256E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9EB6FF1528B94926001E1404 /* Build configuration list for PBXNativeTarget "TexturePOC" */;
 			buildPhases = (
+				255365E2DD92407068A6BF55 /* [CP] Check Pods Manifest.lock */,
 				9EB6FEFD28B94925001E1404 /* Sources */,
 				9EB6FEFE28B94925001E1404 /* Frameworks */,
 				9EB6FEFF28B94925001E1404 /* Resources */,
+				18CB45A81157903456728F55 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		18CB45A81157903456728F55 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TexturePOC/Pods-TexturePOC-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TexturePOC/Pods-TexturePOC-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TexturePOC/Pods-TexturePOC-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		255365E2DD92407068A6BF55 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TexturePOC-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9EB6FEFD28B94925001E1404 /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		9EB6FF1628B94926001E1404 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8BA3848627AE551BCD076485 /* Pods-TexturePOC.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		9EB6FF1728B94926001E1404 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60D9DA4CFBE233073A93F4F6 /* Pods-TexturePOC.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

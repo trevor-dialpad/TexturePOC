@@ -1,0 +1,6 @@
+framework module Pods_TexturePOC {
+  umbrella header "Pods-TexturePOC-umbrella.h"
+
+  export *
+  module * { export * }
+}

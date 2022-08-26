@@ -1,0 +1,6 @@
+framework module AnchorKit {
+  umbrella header "AnchorKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
