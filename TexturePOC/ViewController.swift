@@ -92,29 +92,62 @@ class TextureViewController: UIViewController {
         tableNode.inverted = true
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        textView.becomeFirstResponder()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .red
         [tableNode.view].forEach(view.addSubview)
 
-        view.addSubview(inputComposer.view)
-        inputComposer.view.backgroundColor = .green
-        inputComposer.view.constrainHeight(to: 80.0)
-        inputComposer.attributedPlaceholderText = NSAttributedString(string: "Type something here...")
-        inputComposer.attributedText = NSAttributedString(string: "Lorem ipsum dolor sit amet.")
-        inputComposer.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+//        view.addSubview(inputComposer.view)
+//        inputComposer.view.backgroundColor = .green
+//        inputComposer.view.constrainHeight(to: 80.0)
+//        inputComposer.attributedPlaceholderText = NSAttributedString(string: "Type something here...")
+//        inputComposer.textContainerInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
 
-        inputComposer.view.constrain(.leading, .trailing, to: view)
-        inputComposer.view.constrain(.bottom, to: .top, of: view.keyboardLayoutGuide)
-        tableNode.view.constrain(.leading, .top, .trailing, to: view)
-        tableNode.view.constrain(.bottom, to: .top, of: inputComposer.view)
+//        inputComposer.view.constrain(.leading, .trailing, to: view)
+//        inputComposer.view.constrain(.bottom, to: .top, of: view.keyboardLayoutGuide)
+//        tableNode.view.constrain(.leading, .top, .trailing, to: view)
+//        tableNode.view.constrain(.bottom, to: .top, of: inputComposer.view)
         tableNode.view.backgroundColor = .blue
         tableNode.view.keyboardDismissMode = .interactive
+        tableNode.view.constrainEdges(to: view)
 
-        view.keyboardLayoutGuide.followsUndockedKeyboard = true
-        let textFieldOnKeyboard = view.keyboardLayoutGuide.topAnchor.constraint(equalTo: inputComposer.view.bottomAnchor)
-        view.keyboardLayoutGuide.setConstraints([textFieldOnKeyboard], activeWhenAwayFrom: .top)
+//        view.keyboardLayoutGuide.followsUndockedKeyboard = true
+//        let textFieldOnKeyboard = view.keyboardLayoutGuide.topAnchor.constraint(equalTo: inputComposer.view.bottomAnchor)
+//        view.keyboardLayoutGuide.setConstraints([textFieldOnKeyboard], activeWhenAwayFrom: .top)
    }
+
+    override var inputAccessoryView: UIToolbar {
+        return self.keyboardAccessory
+    }
+
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+
+    var textView: UITextView = {
+        let view = UITextView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .yellow
+        return view
+    }()
+
+    lazy var keyboardAccessory: UIToolbar = {
+        let inputAccessory = UIToolbar(frame: .init(x: 0, y: 0, width: 0, height: 100))
+        inputAccessory.addSubview(textView)
+        NSLayoutConstraint.activate([
+            textView.centerXAnchor.constraint(equalTo: inputAccessory.centerXAnchor),
+            textView.centerYAnchor.constraint(equalTo: inputAccessory.centerYAnchor),
+            textView.widthAnchor.constraint(equalToConstant: 200),
+            textView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        inputAccessory.backgroundColor = .gray
+        return inputAccessory
+    }()
 }
 
 extension TextureViewController: ASTableDataSource {
